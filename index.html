@@ -1,0 +1,76 @@
+<?php
+if(isset($_POST['submit'])){
+include_once('config.php');
+$nome = $_POST['nome'];
+$email = $_POST['email'];
+$senha = $_POST['senha'];
+$escolha = $_POST['escolha'];
+$cor = $_POST['cor'];
+$result = mysqli_query($conexao, "INSERT INTO nome(nome,email,senha,escolha,cor) VALUES ('$nome','$email','$senha','$escolha','$cor')");}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Barbiegueti</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Adicione suas regras de estilo CSS aqui, conforme necessário */
+    </style>
+</head>
+<body style="background-color: white;"> <!-- Defina uma cor de fundo padrão -->
+    <form action="index.php" method="POST"> <!-- Corrigi a tag 'forms' para 'form' -->
+
+        <center><h1>SescWarts</h1></center>
+
+        <fieldset> <!-- barrinhas ao redor -->
+            <legend>Informações pessoais:</legend>
+            
+            <label for="name">Barbiegueti:</label><br>
+            <input type="text" placeholder="Seu vulgo" name="name" id="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" placeholder="Seu email de Barbiegreti" required><br><br>
+
+            <label for="password">Senha:</label><br>
+            <input type="password" id="password" name="password" placeholder="Sua senha de Barbiegreti" required>
+        </fieldset>
+
+        <fieldset> <!-- barrinhas ao redor -->
+            <legend>Barbi grew:</legend>
+
+            <label>Escolha sua Barbie preferida:</label><br><br>
+            
+            <input type="radio" id="moda_e_magia" name="barbie">
+            <label for="moda_e_magia">Moda e Magia</label>
+
+            <input type="radio" id="princesa_e_a_pop_star" name="barbie">
+            <label for="princesa_e_a_pop_star">Princesa e a Pop Star</label>
+
+            <input type="radio" id="merlia" name="barbie">
+            <label for="merlia">Em Vida de Sereia</label>
+
+            <input type="radio" id="diamantes" name="barbie">
+            <label for="diamantes">Castelo de Diamantes</label><br><br>
+
+            <label for="color">Cor predileta:</label><br>
+            <input type="color" id="color" onchange="changeBackgroundColor()"><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Comentários:</legend>
+
+            <label for="comment">Comentários:</label><br>
+            <textarea name="comment" id="comment" cols="60" rows="7"></textarea><br>
+        </fieldset>
+
+        <fieldset> <!-- Adicionei a tag de abertura do campo 'fieldset' -->
+            <legend>Envio</legend>
+            
+            <input type="checkbox">
+            Eu aceito todos os Termos e Condições
+        </fieldset> <!-- Fechei a tag 'fieldset' corretamente -->
+    </form>
+</body>
+</html>

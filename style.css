@@ -1,0 +1,31 @@
+body {
+    background-image: url(./img/barbie.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+}
+
+h1 {
+    font-family: 'Sedgwick Ave Display', cursive;
+    color: black; /* Alterado de "rgb(255, 255, 255)" para "#FFFFFF" para simplificar. */
+}
+
+form { /* Corrigido de 'forms' para 'form' para coincidir com a marcação HTML. */
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+textarea {
+    resize: none;
+}
+
+fieldset {
+    max-width: 500px; /* Alterado de 'width' para 'max-width' para garantir que não fique maior do que o contêiner. */
+    margin: 0 auto; /* Centraliza o elemento horizontalmente. */
+}
+
+.formulario_inteiro {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Adicionado 'align-items' para centralizar verticalmente. */
+    min-height: 100vh;
+}
